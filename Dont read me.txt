@@ -1,0 +1,45 @@
+important!
+
+1. First if you want to order a specific folder you can do it just modifying the "downloadPath" variable to the new path:
+	For example:
+		Old folder path: "/Users/Mario/Downloads/"
+		New folder path: "/Users/Mario/Desktop/MyFiles/"
+	IT IS VERY IMPORTANT TO RESPECT THE FORMAT ALL THE TIME.
+
+2. It is probably that you want to organize the files in other way even if they are of different type so:
+	You must go to the variable of extensions and modify it:
+		For example:
+			I DON'T WANT: videoExt or audioExt
+			I WANT: mediaExt because i edit videos and i need to search for media fast.
+		And you are free of what type of extension you will use.
+
+3. Just a simple function that gives you the option to create the folders (in case that you don't have it).
+
+4. Function that check if you have the folders created.
+	Also here in the "necessary" var, you can modify the name of your folders.
+		For example:
+			I DON'T WANT: Video and Audio Folders.
+			I WANT: Media Folder.
+
+5. This function order your files of your FOLDER PATH using the extentions and the folders that you create.
+	For example:
+		I DON'T WANT:
+			for ext in videoExt:
+       				if extention == ext:
+            					shutil.move(downloadPath + file, downloadPath + 'Video')
+    			for ext in audioExt:
+        			if extention == ext:
+            				shutil.move(downloadPath + file, downloadPath + 'Audio')
+	Because i want a media folder with media extensions so:
+		I WANT:
+			for ext in mediaExt:
+       				if extention == ext:
+            					shutil.move(downloadPath + file, downloadPath + 'Media')
+
+6. This function here executes all in order, but here i added a counter to know how many files are ordered when the program finishes (it isn't the most brilliant solution but it works.
+	To make this counter work just enter the number of folders that you created as a integer.
+		For example:
+			If i create the folders "Media" and "Others":
+				print('{} Files ordered successfully in {}!\n'.format(counter - 2,downloadPath))
+			If i create 7 folders:
+				print('{} Files ordered successfully in {}!\n'.format(counter - 7, downloadPath))
